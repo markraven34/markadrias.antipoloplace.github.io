@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antipolo Place</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        background-color: #e5dcc9;
+        color: rgb(0, 0, 0);
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 220px;
+        background: #000000;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+      }
+
+      .sidebar h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #ffffff;
+      }
+
+      .sidebar a {
+        display: block;
+        text-decoration: none;
+        color: #cbd5e1;
+        padding: 8px 0;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover {
+        color: #38bdf8;
+      }
+
+      /* Main content */
+      .main {
+        margin-left: 240px;
+        padding: 40px;
+        flex: 1;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .card h1 {
+        font-size: 28px;
+        margin: 15px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #38bdf8;
+        color: black;
+        padding: 10px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .btn:hover {
+        background: #0ea5e9;
+        color: white;
+      }
+
+      .card p {
+        line-height: 1.6;
+      }
+
+      /* Gallery */
+      .gallery {
+        margin-top: 40px;
+      }
+
+      .gallery h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .gallery-grid img:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Menu</h2>
+      <a href="blog.html">⬅ Back</a>
+      <a href="#gallery">📸 Gallery</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+      <div class="card">
+        <img src="hinulugan.jpg" alt="Hinulugang Tak Tak" />
+        <h1>Hinulugang Tak-Tak</h1>
+        <a href="https://maps.app.goo.gl/YFxbcyCyYYgCmqxR6" class="btn"
+          >📍 View Location</a
+        >
+        <p
+          style="font-family: Impact, Charcoal, sans-serif; color: rgb(0, 0, 0)"
+        >
+          Description
+        </p>
+        Hinulugang Taktak doesn't have a specific "built" or "discovered" date,
+        as it's a natural waterfall with a legend of its naming from the 15th or
+        16th century when a bell was dropped there. It became a designated
+        recreation area in 1952 and was later declared a National Park in 1990
+        under a specific law.
+        <p></p>
+        Hinulugang Taktak is a 70-foot waterfall and a designated national park
+        in Antipolo City, Rizal, Philippines. It is a popular natural tourist
+        spot named after the legend of a large bell (taktak) being dropped
+        (hinulog) into it in the 16th century to end a priest's suffering from
+        its unbearable ringing. The park features a scenic waterfall, lush
+        greenery, and is managed by the Department of Environment and Natural
+        Resources and the Rizal Provincial Government.
+        <p></p>
+        Hinulugang Taktak Protected Landscape, also known as Hinulugan Taktak,
+        is a protected area in Rizal, Philippines. Initially assigned as a
+        recreation area, the waterfall area has been designated as a national
+        park by virtue of Republic Act No. 6964 in 1990. Ten years later, it
+        became a protected landscape under Proclamation No. 412. It is managed
+        by the Department of Environment and Natural Resources and the Rizal
+        Provincial Government.
+        <p></p>
+        Hinulugang Taktak in Antipolo. This is famous waterfall, the Prime
+        tourist spot of Old Antipolo. Green leaves, smooth ambiance, healthy
+        environment, clean sorroundings, clean flowing water, sweet chirping of
+        the birds, people enjoying the place. Children playing as their mothers
+        rinsed the laundry upstream, different kinds of fish visible in the
+        water so clear that even the colors of fascinating butterflies were
+        reflected on the water.
+      </div>
+
+      <!-- Gallery Section -->
+<div class="gallery" id="gallery">
+  <h2 style="text-align: center; margin-bottom: 20px;">Gallery</h2>
+  
+  <div class="gallery-grid">
+    <img src="k1.jpg" alt="Gallery Image 1" />
+    <img src="k2.jpg" alt="Gallery Image 2" />
+    <img src="k3.jpg" alt="Gallery Image 3" />
+    <img src="k4.jpg" alt="Gallery Image 4" />
+    <img src="k5.jpg" alt="Gallery Image 5" />
+    <img src="k6.jpg" alt="Gallery Image 6" />
+    <img src="k7.jpg" alt="Gallery Image 7" />
+    <img src="k8.jpg" alt="Gallery Image 8" />
+    <img src="k9.jpg" alt="Gallery Image 9" />
+    <img src="k10.jpg" alt="Gallery Image 10" />
+    <img src="k11.jpg" alt="Gallery Image 11" />
+    <img src="k12.jpg" alt="Gallery Image 12" />
+    <img src="k13.jpg" alt="Gallery Image 13" />
+    <img src="k14.jpg" alt="Gallery Image 12" />
+    <img src="k15.jpg" alt="Gallery Image 13" />
+
+    <!-- Video in gallery -->
+    <video controls>
+      <source src="shortvid1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <video controls>
+      <source src="shortvid2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <video controls>
+      <source src="shortvid3.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<style>
+          .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 4 items per row */
+            gap: 20px;
+            justify-items: center;
+          }
+
+          .gallery-grid img,
+          .gallery-grid video {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+          }
+        </style>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

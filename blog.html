@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antipolo Place</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 220px;
+        background: #111;
+        color: white;
+        padding-top: 20px;
+        flex-shrink: 0;
+      }
+
+      .sidebar h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 18px;
+        border-bottom: 1px solid gray;
+        padding-bottom: 10px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        padding: 12px 20px;
+        border-bottom: 1px solid #333;
+      }
+
+      .sidebar ul li a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidebar ul li a:hover {
+        background: #444;
+      }
+
+      /* Main content */
+      .main {
+        flex: 1;
+        background: url("com.jpg") no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 20px;
+      }
+
+      .main h1 {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      .main p {
+        font-size: 18px;
+        font-style: italic;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        body {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+          text-align: center;
+        }
+        .main {
+          height: 70vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Sections</h2>
+      <ul>
+        <li><a href="commercial.html">Home</a></li>
+        <li><a href="xentromall.html">Xentro Mall</a></li>
+        <li><a href="ynares.html">Ynares Center</a></li>
+        <li><a href="church.html">Transfiguration Of Parish Church</a></li>
+        <li><a href="taktak.html">Hinulugang Tak-tak</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="Group.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      <div>
+        <h1>TRAVEL TAILS IN ANTIPOLO</h1>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #000000;
+        --card: #c998e6;
+        --accent: #0ea5e9;
+        --muted: #000000;
+        --radius: 12px;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: #0f172a;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 48px auto;
+        padding: 24px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 28px;
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
+        padding: 28px;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 24px;
+      }
+      p.lead {
+        margin: 0 0 18px;
+        color: var(--muted);
+      }
+
+      .info-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .info-item {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), #60a5fa);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(38, 0, 255);
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+      .info-content {
+        min-width: 0;
+      }
+      .info-content strong {
+        display: block;
+      }
+      .socials {
+        display: flex;
+        gap: 10px;
+        margin-top: 8px;
+      }
+      .socials a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: #111827;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+      }
+
+      /* FORM */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      label {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #030303;
+        font-size: 14px;
+      }
+      textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+      }
+      .row .col {
+        flex: 1;
+      }
+      .btn {
+        background: var(--accent);
+        color: rgb(0, 0, 0);
+        padding: 12px 16px;
+        border-radius: 10px;
+        border: 0;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .map {
+        height: 220px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: linear-gradient(180deg, #dcbafc, #ab93ff);
+      }
+
+      footer {
+        margin-top: 20px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <div class="grid">
+        <!-- Left: Contact form + message -->
+        <section class="card">
+          <h1>Contact Us</h1>
+          <p class="lead">
+            Have a question, want a quote, or just want to say hi? Send us a
+            message — we usually reply within 24 hours.
+          </p>
+
+          <form id="contactForm">
+            <div class="row">
+              <div class="col">
+                <label for="name">Full name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Jane Doe"
+                  required
+                />
+              </div>
+              <div class="col">
+                <label for="phone">Phone (optional)</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="text"
+                  placeholder="+63 9xx xxx xxxx"
+                />
+              </div>
+            </div>
+
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+            />
+
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us about your project, request, or question..."
+              required
+            ></textarea>
+
+            <div style="display: flex; gap: 12px; align-items: center">
+              <button class="btn" type="submit">Send message</button>
+              <div class="muted">
+                Or email us at
+                <a href="adriasmarkraven@gmail,com">adriasmarkraven@gmail.com</a>
+              </div>
+            </div>
+          </form>
+
+          <div
+            id="success"
+            style="
+              display: none;
+              margin-top: 14px;
+              padding: 12px;
+              border-radius: 8px;
+              background: #ecfdf5;
+              color: #065f46;
+            "
+          >
+            Thanks! Your message was sent (simulated).
+          </div>
+
+          <script>
+            document
+              .getElementById("contactForm")
+              .addEventListener("submit", function (e) {
+                e.preventDefault();
+                // Simple client-side validation (email already validated by browser)
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const message = document.getElementById("message").value.trim();
+                if (!name || !email || !message) {
+                  alert("Please fill the required fields.");
+                  return;
+                }
+                // For demo: show a success message and clear form
+                document.getElementById("success").style.display = "block";
+                this.reset();
+                setTimeout(() => {
+                  document.getElementById("success").style.display = "none";
+                }, 6000);
+
+                // TODO: Replace with real submission (AJAX / fetch to your backend, or use a service like Formspree, Netlify Forms, etc.)
+              });
+          </script>
+        </section>
+
+        <!-- Right: Contact details -->
+        <aside class="card">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              margin-bottom: 12px;
+            "
+          >
+            <div
+              style="
+                width: 64px;
+                height: 64px;
+                border-radius: 12px;
+                background: linear-gradient(135deg, var(--accent), #60a5fa);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgb(0, 0, 0);
+                font-size: 28px;
+              "
+            >
+              M. A
+            </div>
+            <div>
+              <strong>Mark Adrias E.</strong>
+              
+            </div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-item">
+              <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="info-content">
+                <strong>Address</strong>
+                <div class="muted">
+                  Brgy. San salvador Bras Rizal
+                </div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="info-content">
+                <strong>Email</strong>
+                <div>
+                  <a href="ravenadrias39@gmail.com">adriasmarkraven@gmail.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="info-content">
+                <strong>Phone</strong>
+                <div class="muted">+63 948 951 9235</div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="info-content">
+                <strong>Business hours</strong>
+                <div class="muted">Mon–Fri 9:00 — 18:00</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 6px">
+  <div class="socials">
+    <a href="https://www.facebook.com/mark.adrias.656121?rdid=lMiNDHpp8EGPV5Qj&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EYBLN3SAT%2F#" title="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/whoes.mark?igsh=MXU3NjF0MXl6aHNjNw==" title="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    </a>
+  </div>
+</div>
+
+<hr>
+
+            
+          <div>
+            <strong>Find us</strong>
+            <div class="map" aria-hidden="true">
+              <!-- Replace with an embedded Google Maps iframe if you want a live map -->
+              <div style="padding: 18px; color: var(--muted)">
+                Map preview — embed an iframe from Google Maps here.
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+    <div style="text-align: center; margin: 30px 0;">
+  <a href="blog.html" 
+     style="
+       display: inline-block;
+       padding: 12px 24px;
+       background: #0ea5e9;
+       color: #fff;
+       font-weight: bold;
+       border-radius: 8px;
+       text-decoration: none;
+       transition: background 0.3s;">
+    ⬅ Back
+  </a>
+</div>
+
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

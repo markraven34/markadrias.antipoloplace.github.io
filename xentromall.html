@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antipolo Place</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        background-color: #e5dcc9;
+        color: rgb(0, 0, 0);
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 220px;
+        background: #000000;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+      }
+
+      .sidebar h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #ffffff;
+      }
+
+      .sidebar a {
+        display: block;
+        text-decoration: none;
+        color: #cbd5e1;
+        padding: 8px 0;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover {
+        color: #38bdf8;
+      }
+
+      /* Main content */
+      .main {
+        margin-left: 240px;
+        padding: 40px;
+        flex: 1;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .card h1 {
+        font-size: 28px;
+        margin: 15px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #38bdf8;
+        color: black;
+        padding: 10px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .btn:hover {
+        background: #0ea5e9;
+        color: white;
+      }
+
+      .card p {
+        line-height: 1.6;
+      }
+
+      /* Gallery */
+      .gallery {
+        margin-top: 40px;
+      }
+
+      .gallery h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .gallery-grid img:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Menu</h2>
+      <a href="blog.html">⬅ Back</a>
+      <a href="#gallery">📸 Gallery</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+      <div class="card">
+        <img src="g.jpg" alt="Transfiguration Church" />
+        <h1>Xentro Mall Antipolo</h1>
+        <a href="https://maps.app.goo.gl/gHrU3EHzjTP6emV38" class="btn"
+          >📍 View Location</a
+        >
+        <p style="font-family: Impact, Charcoal, sans-serif; color: rgb(0, 0, 0);">
+  Description
+</p>
+        XentroMall Antipolo, located along Sumulong Highway in Barangay
+        Mambugan, Antipolo City, officially opened its doors to the public on
+        June 21, 2018. Developed and managed by XRC Mall Developer, Inc., the
+        mall was built to provide a convenient shopping destination for the
+        growing community in Antipolo and nearby areas, offering a more
+        accessible alternative to larger malls in Metro Manila. Designed as a
+        three-story community mall, it houses a variety of retail shops, dining
+        establishments, and service centers, aiming to meet the everyday needs
+        of local residents. The mall gained national recognition in 2018 when it
+        won the Golden Kubeta Award for maintaining one of the cleanest public
+        restrooms in the country. In a significant development, XentroMall
+        Antipolo was declared a special economic zone on November 22, 2024,
+        under Proclamation No. 752, designating it as an Information Technology
+        (IT) center. This ecozone status allows for business incentives and
+        encourages IT-related enterprises to operate within its premises. With a
+        land area of 10,898 square meters and a floor area of over 27,000 square
+        meters, the mall continues to play an essential role in both the local
+        economy and community life in Antipolo. 
+        <p> </p>
+        XentroMall Antipolo stands out
+        among community malls for several notable reasons. Most significantly,
+        it was declared a special economic zone on November 22, 2024, under
+        Proclamation No. 752, officially designating it as an Information
+        Technology (IT) Center. This means the mall is now recognized as a hub
+        for IT and BPO companies, making it eligible for government incentives
+        through the Philippine Economic Zone Authority (PEZA). The ecozone
+        status not only boosts business opportunities in the area but also
+        positions the mall as a potential employment center in Antipolo.
+        Additionally, XentroMall Antipolo has become a key part of the local
+        community due to its accessible location along Sumulong Highway in
+        Barangay Mambugan, offering a convenient destination for shopping,
+        dining, and services. The mall has held festive, family friendly events,
+        like an elaborate Christmas lights display, a “Christmas village” theme,
+        merry go rounds, train sets, etc., which are free for the public. These
+        help create a sense of community and make the mall more than just a
+        place to shop.Overall, its blend of economic significance and strong
+        community engagement makes XentroMall Antipolo uniquely special in the
+        region
+
+      <!-- Gallery Section -->
+      <div class="gallery" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <img src="xentro1.jpg" alt="Gallery Image 1" />
+          <img src="xentro2.jpg" alt="Gallery Image 2" />
+          <img src="xentro4.jpg" alt="Gallery Image 3" />
+          <img src="xentro3.jpg" alt="Gallery Image 4" />
+          <img src="xentro5.jpg" alt="Gallery Image 5" />
+          <img src="xentro6.jpg" alt="Gallery Image 6" />
+        </div>
+
+        <style>
+          .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 4 items per row */
+            gap: 20px;
+            justify-items: center;
+          }
+
+          .gallery-grid img,
+          .gallery-grid video {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+          }
+        </style>
+      </div>
+    </div>
+  </body>
+</html>
