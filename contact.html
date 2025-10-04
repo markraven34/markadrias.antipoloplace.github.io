@@ -37,7 +37,6 @@
         margin: 48px auto;
         padding: 24px;
       }
-
       .grid {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -48,14 +47,12 @@
           grid-template-columns: 1fr;
         }
       }
-
       .card {
         background: var(--card);
         border-radius: var(--radius);
         box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
         padding: 28px;
       }
-
       h1 {
         margin: 0 0 8px;
         font-size: 24px;
@@ -64,7 +61,6 @@
         margin: 0 0 18px;
         color: var(--muted);
       }
-
       .info-list {
         display: flex;
         flex-direction: column;
@@ -79,16 +75,13 @@
         width: 44px;
         height: 44px;
         border-radius: 10px;
-        background: linear-gradient(135deg, var(--accent), #60a5fa);
+        background: linear-gradient(135deg, var(--accent), #227bff);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: rgb(38, 0, 255);
+        color: rgb(0, 0, 0);
         font-size: 18px;
         flex-shrink: 0;
-      }
-      .info-content {
-        min-width: 0;
       }
       .info-content strong {
         display: block;
@@ -109,8 +102,6 @@
         color: rgb(255, 255, 255);
         text-decoration: none;
       }
-
-      /* FORM */
       form {
         display: flex;
         flex-direction: column;
@@ -153,14 +144,12 @@
         color: var(--muted);
         font-size: 13px;
       }
-
       .map {
         height: 220px;
         border-radius: 10px;
         overflow: hidden;
         background: linear-gradient(180deg, #dcbafc, #ab93ff);
       }
-
       footer {
         margin-top: 20px;
         text-align: center;
@@ -172,7 +161,7 @@
   <body>
     <main class="container">
       <div class="grid">
-        <!-- Left: Contact form + message -->
+        <!-- Left: Contact form -->
         <section class="card">
           <h1>Contact Us</h1>
           <p class="lead">
@@ -180,7 +169,8 @@
             message — we usually reply within 24 hours.
           </p>
 
-          <form id="contactForm">
+          <!-- ✅ FIXED FORM -->
+          <form action="https://formspree.io/f/xvgwrkgn" method="POST">
             <div class="row">
               <div class="col">
                 <label for="name">Full name</label>
@@ -220,52 +210,8 @@
               required
             ></textarea>
 
-            <div style="display: flex; gap: 12px; align-items: center">
-              <button class="btn" type="submit">Send message</button>
-              <div class="muted">
-                Or email us at
-                <a href="adriasmarkraven@gmail,com">adriasmarkraven@gmail.com</a>
-              </div>
-            </div>
+            <button class="btn" type="submit">Send message</button>
           </form>
-
-          <div
-            id="success"
-            style="
-              display: none;
-              margin-top: 14px;
-              padding: 12px;
-              border-radius: 8px;
-              background: #ecfdf5;
-              color: #065f46;
-            "
-          >
-            Thanks! Your message was sent (simulated).
-          </div>
-
-          <script>
-            document
-              .getElementById("contactForm")
-              .addEventListener("submit", function (e) {
-                e.preventDefault();
-                // Simple client-side validation (email already validated by browser)
-                const name = document.getElementById("name").value.trim();
-                const email = document.getElementById("email").value.trim();
-                const message = document.getElementById("message").value.trim();
-                if (!name || !email || !message) {
-                  alert("Please fill the required fields.");
-                  return;
-                }
-                // For demo: show a success message and clear form
-                document.getElementById("success").style.display = "block";
-                this.reset();
-                setTimeout(() => {
-                  document.getElementById("success").style.display = "none";
-                }, 6000);
-
-                // TODO: Replace with real submission (AJAX / fetch to your backend, or use a service like Formspree, Netlify Forms, etc.)
-              });
-          </script>
         </section>
 
         <!-- Right: Contact details -->
@@ -295,7 +241,6 @@
             </div>
             <div>
               <strong>Mark Adrias E.</strong>
-              
             </div>
           </div>
 
@@ -304,9 +249,7 @@
               <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
               <div class="info-content">
                 <strong>Address</strong>
-                <div class="muted">
-                  Brgy. San salvador Bras Rizal
-                </div>
+                <div class="muted">Brgy. San salvador Bras Rizal</div>
               </div>
             </div>
 
@@ -315,7 +258,9 @@
               <div class="info-content">
                 <strong>Email</strong>
                 <div>
-                  <a href="ravenadrias39@gmail.com">adriasmarkraven@gmail.com</a>
+                  <a href="mailto:adriasmarkraven@gmail.com"
+                    >adriasmarkraven@gmail.com</a
+                  >
                 </div>
               </div>
             </div>
@@ -337,50 +282,52 @@
             </div>
 
             <div style="margin-top: 6px">
-  <div class="socials">
-    <a href="https://www.facebook.com/mark.adrias.656121?rdid=lMiNDHpp8EGPV5Qj&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EYBLN3SAT%2F#" title="Facebook">
-      <i class="fa-brands fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/whoes.mark?igsh=MXU3NjF0MXl6aHNjNw==" title="Instagram">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-    </a>
-  </div>
-</div>
+              <div class="socials">
+                <a
+                  href="https://www.facebook.com/mark.adrias.656121"
+                  title="Facebook"
+                >
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/whoes.mark"
+                  title="Instagram"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </div>
+            </div>
 
-<hr>
+            <hr />
 
-            
-          <div>
-            <strong>Find us</strong>
-            <div class="map" aria-hidden="true">
-              <!-- Replace with an embedded Google Maps iframe if you want a live map -->
-              <div style="padding: 18px; color: var(--muted)">
-                Map preview — embed an iframe from Google Maps here.
+            <div>
+              <strong>Find us</strong>
+              <div class="map" aria-hidden="true">
+                <div style="padding: 18px; color: var(--muted)">
+                  Map preview — embed an iframe from Google Maps here.
+                </div>
               </div>
             </div>
           </div>
         </aside>
       </div>
 
-    <div style="text-align: center; margin: 30px 0;">
-  <a href="blog.html" 
-     style="
-       display: inline-block;
-       padding: 12px 24px;
-       background: #0ea5e9;
-       color: #fff;
-       font-weight: bold;
-       border-radius: 8px;
-       text-decoration: none;
-       transition: background 0.3s;">
-    ⬅ Back
-  </a>
-</div>
-
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+      <div style="text-align: center; margin: 30px 0">
+        <a
+          href="blog.html"
+          style="
+            display: inline-block;
+            padding: 12px 24px;
+            background: #0ea5e9;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s;
+          "
+          >⬅ Back</a
+        >
+      </div>
+    </main>
   </body>
 </html>
