@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antipolo Place</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        background-color: #e5dcc9;
+        color: rgb(0, 0, 0);
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 220px;
+        background: #000000;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+      }
+
+      .sidebar h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #ffffff;
+      }
+
+      .sidebar a {
+        display: block;
+        text-decoration: none;
+        color: #cbd5e1;
+        padding: 8px 0;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover {
+        color: #38bdf8;
+      }
+
+      /* Main content */
+      .main {
+        margin-left: 240px;
+        padding: 40px;
+        flex: 1;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .card h1 {
+        font-size: 28px;
+        margin: 15px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #38bdf8;
+        color: black;
+        padding: 10px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .btn:hover {
+        background: #0ea5e9;
+        color: white;
+      }
+
+      .card p {
+        line-height: 1.6;
+      }
+
+      /* Gallery */
+      .gallery {
+        margin-top: 40px;
+      }
+
+      .gallery h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .gallery-grid img:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Menu</h2>
+      <a href="blog.html">⬅ Back</a>
+      <a href="#gallery">📸 Gallery</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+      <div class="card">
+        <img src="robinson.jpeg" alt="Transfiguration Church" />
+        <h1>Robinson antipolo</h1>
+        <a href="https://maps.app.goo.gl/UHmo48VvExtVHLDC7" class="btn"
+          >📍 View Location</a
+        >
+        <p style="font-family: Impact, Charcoal, sans-serif; color: rgb(0, 0, 0);">
+  Description
+</p>
+        Robinsons Antipolo is a vibrant lifestyle and shopping destination located along Sumulong Highway in Antipolo City, Rizal. Strategically nestled on the hillside, it offers a refreshing escape from the Metro while still being easily accessible to residents and visitors of the city. The mall features a wide selection of retail shops, dining options, essential services, and entertainment facilities, making it a go-to hub for both everyday needs and weekend leisure.
+ Robinsons Antipolo caters to a diverse crowd—from families and students to professionals and tourists. It houses popular local and international brands, a well-equipped supermarket, and a cinema complex, along with scenic outdoor areas views of the surrounding hills and skyline. With its blend of convenience and charm, Robinsons Antipolo reflects the relaxed yet growing energy of the city it serves.
+        
+
+      <!-- Gallery Section -->
+      <div class="gallery" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <img src="robinson1.jpg" alt="Gallery Image 1" />
+          <img src="robinson2.jpg" alt="Gallery Image 2" />
+          <img src="robinson3.jpg" alt="Gallery Image 3" />
+          <img src="robinson5.jpg" alt="Gallery Image 4" />
+          <img src="6.jpg" alt="Gallery Image 5" />
+          <img src="7.jpg" alt="Gallery Image 6" />
+        </div>
+
+        <style>
+          .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 4 items per row */
+            gap: 20px;
+            justify-items: center;
+          }
+
+          .gallery-grid img,
+          .gallery-grid video {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+          }
+        </style>
+      </div>
+    </div>
+  </body>
+</html>
