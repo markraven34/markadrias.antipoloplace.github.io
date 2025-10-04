@@ -25,6 +25,7 @@
         color: white;
         padding-top: 20px;
         flex-shrink: 0;
+        z-index: 2; /* para laging nasa ibabaw ng video */
       }
 
       .sidebar h2 {
@@ -59,19 +60,34 @@
       /* Main content */
       .main {
         flex: 1;
-        background: url("com.jpg") no-repeat center center/cover;
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         color: white;
-        padding: 20px;
+        overflow: hidden;
+      }
+
+      /* Video background */
+      .main video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; /* nasa likod */
       }
 
       .main h1 {
-        font-size: 40px;
+        font-size: 75px;
         font-weight: bold;
         margin-bottom: 10px;
+
+        /* Stroke + shadow */
+        -webkit-text-stroke: 3px rgb(255, 255, 255);
+        color: rgb(0, 174, 255);
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
       }
 
@@ -106,13 +122,23 @@
         <li><a href="ynares.html">Ynares Center</a></li>
         <li><a href="church.html">Transfiguration Of Parish Church</a></li>
         <li><a href="taktak.html">Hinulugang Tak-tak</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="robinson.html">Robinson Antipolo</a></li>
         <li><a href="Group.html">About Us</a></li>
+        <li><a href="shortvid.html">Short Video</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
 
     <!-- Main Content -->
     <div class="main">
+      <!-- Video background -->
+      <video autoplay muted loop>
+        <source src="bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Text content -->
       <div>
         <h1>TRAVEL TAILS IN ANTIPOLO</h1>
       </div>
