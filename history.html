@@ -13,36 +13,38 @@
       }
 
       .hero {
-        background-color: #ff0101; /* black background */
+        background-color: #ff0101;
         height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: rgb(29, 194, 51); /* para makita text sa black */
+        color: rgb(29, 194, 51);
       }
 
       /* Testimonials Section */
       .testimonials {
-        background-color: #b4b4b4; /* black background */
+        background-color: #bebebe;
         background-size: cover;
-        padding: 40px 20px;
-        margin-top: 40px;
+        padding: 40px 60px;
+        margin: 40px auto;
         border-radius: 12px;
-        text-align: center;
-        color: #000000; /* para visible ang text sa image */
-        font-family: "Impact", serif; /* bagong font */
-        font-size: 19px; /* general text size */
-        line-height: 1.6; /* para mas madaling basahin */
+        max-width: 900px; /* limit width para center */
+        text-align: justify; /* justify text */
+        color: #000000;
+        font-family: "Times New Roman", serif;
+        font-size: 24px;
+        line-height: 1.8;
       }
 
       .testimonials h2 {
-        font-size: 41px; /* mas malaki yung heading */
+        font-size: 41px;
         font-weight: bold;
-        font-family: "Arial Black", sans-serif; /* iba rin ang font ng heading */
+        font-family: "Arial Black", sans-serif;
         margin-bottom: 20px;
-        color: #30015c; /* white para visible sa bg */
+        color: #30015c;
+        text-align: center; /* center heading */
       }
 
       /* Button Style */
@@ -55,7 +57,7 @@
         font-size: 18px;
         border-radius: 8px;
         text-decoration: none;
-        margin-top: 20px;
+        margin-top: 30px;
         transition: 0.3s;
         cursor: pointer;
         border: none;
@@ -63,7 +65,13 @@
 
       .btn-link:hover,
       button:hover {
-        background-color: #444;
+        background-color: #bebebe;
+      }
+
+      /* Center the button */
+      .testimonials button {
+        display: block;
+        margin: 30px auto 0; /* center sa ilalim */
       }
     </style>
   </head>
@@ -75,52 +83,80 @@
     <!-- Testimonials Section -->
     <section id="Testimonials" class="testimonials">
       <h2>History of Antipolo</h2>
-      <ul>
-        On the Philippine island of Luzon, in the province of Rizal, sits the
-        town of Antipolo. San Mateo and La Paz to the north, Calumpit to the
-        west, Quezon City and Pasig to the south, and Manila Bay to the east are
-        its neighbors. It is situated at a height of around 6 meters above sea
-        level. The tipolo (breadfruit) tree, which was common in the region,
-        inspired the naming of Antipolo City. Antipolo City is the first city in
-        Rizal. It was established in 1570 by Miguel de Legazpi, the first
-        governor-general of the Philippines, as a place for religious retreats
-        and a base for his explorations. The Spanish government built a military
-        fortress here to protect themselves from Moro attacks.In 1571, Fray
-        Andres de Urdaneta came here to spread Christianity to the natives. He
-        started on November 6 and finished on December 20, 1571. He baptized a
-        total of two hundred twenty-one people in two weeks and established six
-        missions in Antipolo. Fray Juan Crespi also came with Fray Andres de
-        Urdaneta to establish another mission here on June 5, 1572. It was named
-        San Pablo de Tiaong after Saint Paul’s New Testament book bearing the
-        same name Antipolo joined the newly created Province of Rizal, along
-        with the municipalities of Morong District and Manila Province, on June
-        11, 1901. Antipolo, Boso-Boso, and Teresa were combined in 1903. The
-        sitios of Mayamot and Bulao have added to the town’s boundaries once
-        again in 1913, but Teresa was lost when it split off to form an
-        independent municipality six years later. On December 24, 1908, the
-        Manila Railroad Company began operating a train line to Antipolo. After
-        plebiscite approval on April 4, 1998, former President Fidel V. Ramos
-        signed Republic Act No. 8508, establishing the Municipality of Antipolo
-        as a component city of Rizal Province. In the election that followed,
-        Angelito Gatlabayan was chosen as the city’s first mayor.
-        <p></p>
-        Antipolo City, named for its abundant Tipolo trees, has a history
-        beginning with indigenous tribes and Franciscan missionaries in 1578,
-        evolving into a significant religious site due to the Our Lady of Peace
-        and Good Voyage icon and later a political center for the Province of
-        Rizal. The town grew through Jesuit influence, established as a parish
-        in 1650, and later became the capital of Rizal Province in 1901. It was
-        officially converted to a component city in 1998. Another name for
-        Antipolo is “Pilgrimage City.” It was the Franciscan missionaries who
-        first build the church in the area, in 1578. However, they were replaced
-        by the Jesuits. The missionaries came to “Christianize” the Dumagatas,
-        Tagals, Indians, and Aetas. Some of them were Fr. Chirino and Fr.
-        Almarique. By 1601, the Christian population of Antipolo increased to
-        3,000 due to the people of Dumagat who came and lived in the area.
-      </ul>
+      <p>
+        1. Location: Antipolo is a city in the province of Rizal on the island
+        of Luzon, Philippines.
+      </p>
+      <p>
+        2. Geography:It is about 6 meters above sea level, bordered by San Mateo
+        and La Paz (north), Calumpit (west), Quezon City and Pasig (south), and
+        Manila Bay (east).
+      </p>
+      <p>
+        3. Origin of Name:The city’s name comes from the Tipolo (breadfruit)
+        tree, which was once abundant in the area.
+      </p>
+      <p>
+        4. Founding:Antipolo was established in 1570 by Miguel de Legazpi, the
+        first governor-general of the Philippines, as a religious retreat and
+        exploration base.
+      </p>
+      <p>
+        5. Spanish Fortress: The Spanish built a military fortress in Antipolo
+        to protect against Moro attacks
+      </p>
+      <p>
+        6. Christian Mission (1571):Fray Andres de Urdaneta arrived to spread
+        Christianity, starting on November 6 and finishing on December 20, 1571,
+        baptizing 221 natives and establishing six missions.
+      </p>
+      <p>
+        7. Second Mission (1572): Fray Juan Crespi joined Urdaneta to establish
+        another mission named San Pablo de Tiaong on June 5, 1572.
+      </p>
+      <p>
+        8. Religious Influence: The Franciscan missionaries first built a church
+        in 1578, later replaced by Jesuits such as Fr. Chirino and Fr.
+        Almarique.
+      </p>
+      <p>
+        9. Christianization:By 1601, Antipolo’s Christian population grew to
+        3,000, including Dumagats, Tagals, Indians, and Aetas.
+      </p>
+      <p>
+        10.Province of Rizal (1901): On June 11, 1901, Antipolo joined the newly
+        created Province of Rizal.
+      </p>
+      <p>
+        11. Municipal Changes (1903–1919): 1903: Antipolo merged with Boso-Boso
+        and Teresa.
+      </p>
+      <p>
+        1913: The sitios of Mayamot and Bulao were added. 1919: Teresa separated
+        to become its own municipality.
+      </p>
+      <p>
+        12. Railway (1908): The Manila Railroad Company opened a train line to
+        Antipolo on December 24, 1908.
+      </p>
+      <p>
+        13. Capital of Rizal: Antipolo became the capital of Rizal Province in
+        1901
+      </p>
+      <p>
+        14. Cityhood (1998): Through Republic Act No. 8508, signed by President
+        Fidel V. Ramos on April 4, 1998, Antipolo became a component city after
+        a plebiscite.
+      </p>
+      <p>
+        15. First City Mayor:Angelito Gatlabayan became Antipolo’s first city
+        mayoraf ter cityhood. 16. Religious Significance: Known as the
+        “Pilgrimage City”, it is famous for the Our Lady of Peace and Good
+        Voyage icon.
 
-      <!-- Button with hyperlink -->
-      <button onclick="window.location.href='blog.html'">← Back</button>
+        <!-- Button with hyperlink -->
+        <button onclick="window.location.href='blog.html'">← Back</button>
+      </p>
     </section>
   </body>
 </html>
