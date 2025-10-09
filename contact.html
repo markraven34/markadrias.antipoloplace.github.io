@@ -158,6 +158,7 @@
       }
     </style>
   </head>
+
   <body>
     <main class="container">
       <div class="grid">
@@ -329,5 +330,20 @@
         >
       </div>
     </main>
+
+    <!-- ✅ Script placed correctly -->
+    <script>
+      // I-clear ang form kapag bumalik mula sa "Thanks" page
+      window.addEventListener("pageshow", function (event) {
+        const navEntries = performance.getEntriesByType("navigation");
+        const isBack =
+          event.persisted ||
+          (navEntries[0] && navEntries[0].type === "back_forward");
+        if (isBack) {
+          const form = document.querySelector("form");
+          if (form) form.reset();
+        }
+      });
+    </script>
   </body>
 </html>
