@@ -3,66 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Antipolo Place</title>
+    <title>Hinulugang Taktak</title>
     <style>
       body {
         margin: 0;
         font-family: Arial, sans-serif;
-        display: flex;
         background-color: #e5dcc9;
-        color: rgb(0, 0, 0);
+        color: #000;
       }
 
-      /* Sidebar */
+      /* === Hover Sidebar === */
       .sidebar {
-        width: 220px;
-        background: #000000;
-        padding: 20px;
-        height: 100vh;
         position: fixed;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        z-index: 1000;
       }
 
-      .sidebar h2 {
-        font-size: 20px;
-        margin-bottom: 15px;
-        color: #ffffff;
+      .menu-item {
+        position: relative;
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        cursor: pointer;
+        transition: background 0.3s;
       }
 
-      .sidebar a {
+      .menu-item:hover {
+        background-color: #222;
+      }
+
+      .arrow {
+        font-size: 22px;
         display: block;
-        text-decoration: none;
+      }
+
+      /* Dropdown menu */
+      .dropdown {
+        display: none;
+        position: absolute;
+        left: 60px;
+        top: 0;
+        background-color: #111;
+        min-width: 170px;
+        border-radius: 0 6px 6px 0;
+        overflow: hidden;
+      }
+
+      .dropdown a {
+        display: block;
+        padding: 12px 15px;
         color: #cbd5e1;
-        padding: 8px 0;
-        transition: 0.3s;
+        text-decoration: none;
+        transition: background 0.3s;
       }
 
-      .sidebar a:hover {
-        color: #38bdf8;
+      .dropdown a:hover {
+        background-color: #38bdf8;
+        color: #000;
       }
 
-      /* Main content */
+      /* Show dropdown on hover */
+      .menu-item:hover .dropdown {
+        display: block;
+      }
+
+      /* === Main content === */
       .main {
-        margin-left: 240px;
+        margin-left: 80px;
         padding: 40px;
-        flex: 1;
       }
 
+      /* === Card layout === */
       .card {
-        background: rgba(255, 255, 255, 0.05);
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
         padding: 20px;
-        border-radius: 10px;
-        max-width: 800px;
+        max-width: 1100px;
         margin: auto;
       }
 
       .card img {
-        width: 100%;
+        width: 45%;
         border-radius: 10px;
+        object-fit: cover;
       }
 
-      .card h1 {
+      /* Scrollable text */
+      .card-content {
+        flex: 1;
+        height: 500px;
+        overflow-y: scroll;
+        padding-right: 10px;
+      }
+
+      .card-content::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .card-content::-webkit-scrollbar-thumb {
+        background-color: #999;
+        border-radius: 5px;
+      }
+
+      .card-content h1 {
         font-size: 28px;
-        margin: 15px 0;
+        margin-bottom: 10px;
       }
 
       .btn {
@@ -81,13 +138,17 @@
         color: white;
       }
 
-      .card p {
+      .card-content p {
+        text-align: justify;
         line-height: 1.6;
       }
 
-      /* Gallery */
+      /* === Gallery === */
       .gallery {
         margin-top: 40px;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .gallery h2 {
@@ -97,379 +158,118 @@
       }
 
       .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
       }
 
-      .gallery-grid img {
-        width: 100%;
+      .gallery-grid img,
+      .gallery-grid video {
+        width: 250px;
         height: 180px;
         object-fit: cover;
-        border-radius: 8px;
+        border-radius: 10px;
         transition: transform 0.3s;
-        cursor: pointer;
       }
 
-      .gallery-grid img:hover {
+      .gallery-grid img:hover,
+      .gallery-grid video:hover {
         transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .card {
+          flex-direction: column;
+        }
+        .card img {
+          width: 100%;
+        }
+        .card-content {
+          height: auto;
+          overflow: visible;
+        }
+        .gallery-grid img {
+          width: 100%;
+          height: auto;
+        }
       }
     </style>
   </head>
+
   <body>
-    <!-- Sidebar -->
+    <!-- Sidebar Hover Menu -->
     <div class="sidebar">
-      <h2>Menu</h2>
-      <a href="blog.html">⬅ Back</a>
-      <a href="#gallery">📸 Gallery</a>
+      <div class="menu-item">
+        <span class="arrow">▶</span>
+        <div class="dropdown">
+          <a href="blog.html">⬅ Back</a>
+          <a href="#gallery">📸 Gallery</a>
+        </div>
+      </div>
     </div>
 
-    <!-- Main content -->
+    <!-- Main -->
     <div class="main">
       <div class="card">
-        <img src="hinulugan.jpg" alt="Transfiguration Church" />
-        <h1>Hinulugang Tak-Tak</h1>
-        <a href="https://maps.app.goo.gl/tKWq2F7Dud5q5GhCA" class="btn"
-          >📍 View Location</a
-        >
-        <p
-          style="font-family: Impact, Charcoal, sans-serif; color: rgb(0, 0, 0)"
-        >
-          Description
-        </p>
-
-        Hinulugang Taktak doesn't have a specific "built" or "discovered" date,
-        as it's a natural waterfall with a legend of its naming from the 15th or
-        16th century when a bell was dropped there. It became a designated
-        recreation area in 1952 and was later declared a National Park in 1990
-        under a specific law.
-        <p></p>
-        Hinulugang Taktak is a 70-foot waterfall and a designated national park
-        in Antipolo City, Rizal, Philippines. It is a popular natural tourist
-        spot named after the legend of a large bell (taktak) being dropped
-        (hinulog) into it in the 16th century to end a priest's suffering from
-        its unbearable ringing. The park features a scenic waterfall, lush
-        greenery, and is managed by the Department of Environment and Natural
-        Resources and the Rizal Provincial Government.
-        <p></p>
-        Hinulugang Taktak Protected Landscape, also known as Hinulugan Taktak,
-        is a protected area in Rizal, Philippines. Initially assigned as a
-        recreation area, the waterfall area has been designated as a national
-        park by virtue of Republic Act No. 6964 in 1990. Ten years later, it
-        became a protected landscape under Proclamation No. 412. It is managed
-        by the Department of Environment and Natural Resources and the Rizal
-        Provincial Government.
-        <p></p>
-        Hinulugang Taktak in Antipolo. This is famous waterfall, the Prime
-        tourist spot of Old Antipolo. Green leaves, smooth ambiance, healthy
-        environment, clean sorroundings, clean flowing water, sweet chirping of
-        the birds, people enjoying the place. Children playing as their mothers
-        rinsed the laundry upstream, different kinds of fish visible in the
-        water so clear that even the colors of fascinating butterflies were
-        reflected on the water.
-        <p></p>
-        Activities in Hinulugang Taktak include picnicking, walking on nature
-        trails and hanging bridges, swimming in the park's pool, and exploring
-        the area for its lush flora and fauna. Visitors can also enjoy views of
-        the waterfall, with some sites mentioning free entrance for both the
-        park and some activities.
-
-        <p
-          style="font-family: Impact, Charcoal, sans-serif; color: rgb(0, 0, 0)"
-        >
-          During this season, several key factors attract both locals and
-          tourists
-        </p>
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-          Location
-        </p>
-
-        <p></p>
-        Hinulugang Taktak is located at Daang Bakal Rd., Sitio Taktak, Brgy., in
-        Antipolo, Rizal.
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-          No Entrance Fee
-        </p>
-
-        <p></p>
-        The entrance to the park itself is free for all visitors.
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-          Sign-in Required
-        </p>
-
-        <p></p>
-        You will need to register your name upon entry.
-        <p
-          style="font-family: Impact, Charcoal, sans-serif; color: rgb(0, 0, 0)"
-        >
-          Activities and Amenities
-        </p>
-
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-          Free Activities
-        </p>
-
-        <p></p>
-        Many activities are free, including the canopy trail, spider web, wall
-        climbing, and the swimming pool.
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-          Swimming Pool
-        </p>
-
-        <p></p>
-        The public swimming pool is 
-        available for use, 30pax for 1h, then another batch next. 
-
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-          Picnic Areas
-        </p>
-
-        <p></p>
-         Picnic tables are provided. 
-
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 0, 0);
-          "
-        >
-          Adventures and Activities
-      </p>
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-          Canopy Walk
-        </p>
-
-        <p></p>
-        Explore the park's lush surroundings by walking on a hanging bridge.
-
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-          Spider Web Platform
-        </p>
-
-        <p></p>
-       Experience the thrill of lying on a web-like platform suspended over the falls. 
-
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-          Wall Climbing
-        </p>
-
-        <p></p>
-        Test your climbing skills on the designated wall.
-
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 0, 0);
-          "
-        >
-          Nature and Leisure Activities
-        </p>
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-         Waterfall Viewing 
-        </p>
-
-        <p></p>
-        Take in the scenic views of the park's main waterfall and its surrounding natural beauty. 
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-          Picnicking
-        </p>
-         Enjoy a meal amidst nature at the park's picnic areas.
-        <p></p>
-        
-
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-          Nature Walks
-        </p>
-         Follow the park's trails to explore the area's diverse plants and animals.
-        <p></p>
-
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-      
-        Swimming
-      </p>
-      Take a refreshing dip in the park's swimming pool. 
-        <p></p>
-
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 0, 0);
-          "
-        >
-
-        
-          Other information
-        </p>
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-
-        
-        Free Activities
-        </p>
-         The entrance to the park and some amenities like the swimming pool are free. 
-        <p></p>
-        
-
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(50, 0, 116);
-          "
-        >
-
-          Operating Hours
-        </p>
-         The park is open from Tuesday to Sunday, 7:00 AM to 4:00 PM, and is closed on Mondays. 
-        <p></p>
-        
-
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 0, 0);
-          "
-
-        
-        >
-          Important Notes
-        </p>
-        
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 0, 0);
-          "
-        >
-        <p></p>
-        Wear rubber shoes for the canopy, wall climbing, and spider web activities. 
-        <p></p>
-        Some activities may have age restrictions, 14 yrs old above only.
-
-         <!-- Gallery Section --></p>
-        <div class="gallery" id="gallery">
-          <h2 style="text-align: center; margin-bottom: 20px">Gallery</h2>
-
-          <div class="gallery-grid">
-            <img src="k1.jpg" alt="Gallery Image 1" />
-            <img src="k2.jpg" alt="Gallery Image 2" />
-            <img src="k3.jpg" alt="Gallery Image 3" />
-            <img src="k4.jpg" alt="Gallery Image 4" />
-            <img src="k5.jpg" alt="Gallery Image 5" />
-            <img src="k6.jpg" alt="Gallery Image 6" />
-            <img src="k7.jpg" alt="Gallery Image 7" />
-            <img src="k8.jpg" alt="Gallery Image 8" />
-            <img src="k9.jpg" alt="Gallery Image 9" />
-            <img src="k10.jpg" alt="Gallery Image 10" />
-            <img src="k11.jpg" alt="Gallery Image 11" />
-            <img src="k12.jpg" alt="Gallery Image 12" />
-            <img src="k13.jpg" alt="Gallery Image 13" />
-            <img src="k14.jpg" alt="Gallery Image 12" />
-            <img src="k15.jpg" alt="Gallery Image 13" />
-
-            <!-- Video in gallery -->
-            <video controls>
-              <source src="shortvid1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-
-            <video controls>
-              <source src="shortvid2.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-
-            <video controls>
-              <source src="shortvid3.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+        <img src="hinulugan.jpg" alt="Hinulugang Taktak" />
+        <div class="card-content">
+          <h1>Hinulugang Taktak</h1>
+          <a href="https://maps.app.goo.gl/uKwZKqnMYGtenSk78" class="btn"
+            >📍 View Location</a
+          >
+          <p>
+            Hinulugang Taktak doesn't have a specific "built" or "discovered"
+            date, as it's a natural waterfall with a legend of its naming from
+            the 15th or 16th century when a bell was dropped there. It became a
+            designated recreation area in 1952 and was later declared a National
+            Park in 1990 under a specific law.
+          </p>
+          <p>
+            Hinulugang Taktak is a 70-foot waterfall and a designated national
+            park in Antipolo City, Rizal, Philippines. It is a popular natural
+            tourist spot named after the legend of a large bell (taktak) being
+            dropped (hinulog) into it in the 16th century to end a priest's
+            suffering from its unbearable ringing. The park features a scenic
+            waterfall, lush greenery, and is managed by the Department of
+            Environment and Natural Resources and the Rizal Provincial
+            Government.
+          </p>
+          <p>
+            Hinulugang Taktak Protected Landscape, also known as Hinulugan
+            Taktak, is a protected area in Rizal, Philippines. Initially
+            assigned as a recreation area, the waterfall area has been
+            designated as a national park by virtue of Republic Act No. 6964 in
+            1990. Ten years later, it became a protected landscape under
+            Proclamation No. 412. It is managed by the Department of Environment
+            and Natural Resources and the Rizal Provincial Government.
+          </p>
+          <p>
+            Hinulugang Taktak in Antipolo. This is famous waterfall, the Prime
+            tourist spot of Old Antipolo. Green leaves, smooth ambiance, healthy
+            environment, clean surroundings, clean flowing water, sweet chirping
+            of the birds, people enjoying the place. Children playing as their
+            mothers rinsed the laundry upstream, different kinds of fish visible
+            in the water so clear that even the colors of fascinating
+            butterflies were reflected on the water.
+          </p>
         </div>
+      </div>
 
-        <style>
-          .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 4 items per row */
-            gap: 20px;
-            justify-items: center;
-          }
-
-          .gallery-grid img,
-          .gallery-grid video {
-            width: 100%;
-            max-width: 320px;
-            height: auto;
-            border-radius: 12px;
-            object-fit: cover;
-          }
-        </style>
+      <!-- Gallery -->
+      <div class="gallery" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <img src="k1.jpg" alt="Gallery Image 1" />
+          <img src="k2.jpg" alt="Gallery Image 2" />
+          <img src="k3.jpg" alt="Gallery Image 3" />
+          <img src="k4.jpg" alt="Gallery Image 4" />
+          <img src="k5.jpg" alt="Gallery Image 5" />
+          <img src="k6.jpg" alt="Gallery Image 6" />
+          <img src="k7.jpg" alt="Gallery Image 7" />
+          <img src="k8.jpg" alt="Gallery Image 8" />
+          <img src="k9.jpg" alt="Gallery Image 9" />
+        </div>
       </div>
     </div>
   </body>
