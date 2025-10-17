@@ -3,66 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Antipolo Place</title>
+    <title>Ynares Center Antipolo</title>
     <style>
       body {
         margin: 0;
         font-family: Arial, sans-serif;
-        display: flex;
         background-color: #e5dcc9;
-        color: rgb(0, 0, 0);
+        color: #000;
       }
 
-      /* Sidebar */
+      /* === Hover Sidebar === */
       .sidebar {
-        width: 220px;
-        background: #000000;
-        padding: 20px;
-        height: 100vh;
         position: fixed;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        z-index: 1000;
       }
 
-      .sidebar h2 {
-        font-size: 20px;
-        margin-bottom: 15px;
-        color: #ffffff;
+      .menu-item {
+        position: relative;
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        cursor: pointer;
+        transition: background 0.3s;
       }
 
-      .sidebar a {
+      .menu-item:hover {
+        background-color: #222;
+      }
+
+      .arrow {
+        font-size: 22px;
         display: block;
-        text-decoration: none;
+      }
+
+      .dropdown {
+        display: none;
+        position: absolute;
+        left: 60px;
+        top: 0;
+        background-color: #111;
+        min-width: 170px;
+        border-radius: 0 6px 6px 0;
+        overflow: hidden;
+      }
+
+      .dropdown a {
+        display: block;
+        padding: 12px 15px;
         color: #cbd5e1;
-        padding: 8px 0;
-        transition: 0.3s;
+        text-decoration: none;
+        transition: background 0.3s;
       }
 
-      .sidebar a:hover {
-        color: #38bdf8;
+      .dropdown a:hover {
+        background-color: #38bdf8;
+        color: #000;
       }
 
-      /* Main content */
+      .menu-item:hover .dropdown {
+        display: block;
+      }
+
       .main {
-        margin-left: 240px;
+        margin-left: 80px;
         padding: 40px;
-        flex: 1;
       }
 
       .card {
-        background: rgba(255, 255, 255, 0.05);
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
         padding: 20px;
-        border-radius: 10px;
-        max-width: 800px;
+        max-width: 1100px;
         margin: auto;
       }
 
       .card img {
-        width: 100%;
+        width: 45%;
         border-radius: 10px;
+        object-fit: cover;
       }
 
-      .card h1 {
+      .card-content {
+        flex: 1;
+        height: 500px;
+        overflow-y: scroll;
+        padding-right: 10px;
+      }
+
+      .card-content::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .card-content::-webkit-scrollbar-thumb {
+        background-color: #999;
+        border-radius: 5px;
+      }
+
+      .card-content h1 {
         font-size: 28px;
-        margin: 15px 0;
+        margin-bottom: 10px;
       }
 
       .btn {
@@ -81,13 +133,16 @@
         color: white;
       }
 
-      .card p {
+      .card-content p {
+        text-align: justify;
         line-height: 1.6;
       }
 
-      /* Gallery */
       .gallery {
-        margin-top: 40px;
+        margin-top: 50px;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .gallery h2 {
@@ -97,252 +152,245 @@
       }
 
       .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
       }
 
-      .gallery-grid img {
-        width: 100%;
+      .gallery-grid img,
+      .gallery-grid video {
+        width: 250px;
         height: 180px;
         object-fit: cover;
-        border-radius: 8px;
+        border-radius: 10px;
         transition: transform 0.3s;
-        cursor: pointer;
       }
 
-      .gallery-grid img:hover {
+      .gallery-grid img:hover,
+      .gallery-grid video:hover {
         transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .card {
+          flex-direction: column;
+        }
+        .card img {
+          width: 100%;
+        }
+        .card-content {
+          height: auto;
+          overflow: visible;
+        }
+        .gallery-grid img {
+          width: 100%;
+          height: auto;
+        }
       }
     </style>
   </head>
+
   <body>
-    <!-- Sidebar -->
+    <!-- Sidebar Hover Menu -->
     <div class="sidebar">
-      <h2>Menu</h2>
-      <a href="blog.html">⬅ Back</a>
-      <a href="#gallery">📸 Gallery</a>
+      <div class="menu-item">
+        <span class="arrow">▶</span>
+        <div class="dropdown">
+          <a href="blog.html">⬅ Back</a>
+          <a href="#gallery">📸 Gallery</a>
+        </div>
+      </div>
     </div>
 
-    <!-- Main content -->
+    <!-- Main -->
     <div class="main">
+      <!-- Card Section -->
       <div class="card">
-        <img src="ynares.jpg" alt="Transfiguration Church" />
-        <h1>Ynares Center Antipolo</h1>
-        <a href="https://maps.app.goo.gl/ZcvcWrsNuydqBUqS7" class="btn"
-          >📍 View Location</a
-        >
-        <p
-          style="font-family: Impact, Charcoal, sans-serif; color: rgb(0, 0, 0)"
-        >
-          Description
-        </p>
+        <img src="ynares.jpg" alt="Ynares Center Antipolo" />
+        <div class="card-content">
+          <h1>Ynares Center Antipolo</h1>
+          <a href="https://maps.app.goo.gl/ZcvcWrsNuydqBUqS7" class="btn"
+            >📍 View Location</a
+          >
 
-        The Ynares Center is a multipurpose indoor arena located in Antipolo
-        City, Rizal, Philippines. Opened in 2000, it was built at a cost of
-        around ₱350 million and is owned and operated by the Rizal Provincial
-        Government. Named after the influential Ynares political family, who
-        have held key government positions in Rizal, the center serves as a hub
-        for various events including sports tournaments, concerts, religious
-        gatherings, and official provincial functions. With a seating capacity
-        of approximately 7,400 and situated on a 50,000-square-meter lot, the
-        Ynares Center also houses multiple function rooms, government offices,
-        and parking for over 400 vehicles. Over the years, it has hosted
-        Philippine Basketball Association (PBA) games, collegiate tournaments,
-        boxing matches, and large-scale public celebrations, making it a
-        landmark venue and cultural centerpiece in the province of Rizal. The
-        Ynares Center becomes a popular tourist spot during the "Ber" months
-        (September to December) mainly because it serves as a central venue for
-        holiday celebrations, cultural events, and large-scale gatherings in
-        Antipolo and the province of Rizal.
-        <p
-          style="font-family: Impact, Charcoal, sans-serif; color: rgb(0, 0, 0)"
-        >
-          During this season, several key factors attract both locals and
-          tourists
-        </p>
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 174, 255);
-          "
-        >
-          1. Christmas Events and Decorations
-        </p>
+          <p>
+            The Ynares Center is a multipurpose indoor arena located in Antipolo
+            City, Rizal, Philippines. Opened in 2000, it was built at a cost of
+            around ₱350 million and is owned and operated by the Rizal
+            Provincial Government. Named after the influential Ynares political
+            family, who have held key government positions in Rizal, the center
+            serves as a hub for various events including sports tournaments,
+            concerts, religious gatherings, and official provincial functions.
+          </p>
 
-        <p></p>
-        The Rizal Provincial Government often organizes Christmas lighting
-        ceremonies, parades, concerts, and themed decorations around the Ynares
-        Center, transforming it into a festive destination for families and
-        visitors.
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 174, 255);
-          "
-        >
-          2. Cultural and Religious
-        </p>
+          <p>
+            With a seating capacity of approximately 7,400 and situated on a
+            50,000-square-meter lot, the Ynares Center also houses multiple
+            function rooms, government offices, and parking for over 400
+            vehicles. Over the years, it has hosted Philippine Basketball
+            Association (PBA) games, collegiate tournaments, boxing matches, and
+            large-scale public celebrations, making it a landmark venue and
+            cultural centerpiece in the province of Rizal.
+          </p>
 
-        <p></p>
-        Activities-Since Antipolo is known for its religious heritage, events
-        like Simbang Gabi (night masses), Marian processions, and other
-        traditional celebrations may be held in or around the center during the
-        lead-up to Christmas.
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 174, 255);
-          "
-        >
-          3. Local Fairs And Bazaars
-        </p>
+          <p>
+            The Ynares Center becomes a popular tourist spot during the "Ber"
+            months (September to December) mainly because it serves as a central
+            venue for holiday celebrations, cultural events, and large-scale
+            gatherings in Antipolo and the province of Rizal.
+          </p>
 
-        <p></p>
-        Temporary bazaars, food stalls, trade fairs, and handicraft expos often
-        pop up around the Ynares Center during the holidays, offering unique
-        products and local delicacies perfect for gift-giving and pasalubong
-        (souvenirs).
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 174, 255);
-          "
-        >
-          4. Concerts and Public
-        </p>
+          <p
+            style="
+              font-family: Impact, Charcoal, sans-serif;
+              color: rgb(0, 0, 0);
+            "
+          >
+            During this season, several key factors attract both locals and
+            tourists
+          </p>
 
-        <p></p>
-        Performances– Big concerts, celebrity shows, and performances by local
-        artists are frequently held at the arena during the festive season,
-        drawing crowds from neighboring cities and provinces. In short, the
-        Ynares Center becomes a holiday hotspot not just because of its size,
-        but because it brings together community spirit, culture, entertainment,
-        and tradition especially alive and vibrant during the "Ber" months.
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 174, 255);
-          "
-        >
-          5. Motorcycle event
-        </p>
+          <p
+            style="
+              font-family: Impact, Charcoal, sans-serif;
+              color: rgb(0, 174, 255);
+            "
+          >
+            1. Christmas Events and Decorations
+          </p>
 
-        <p></p>
-        Motorcycle events such as races, motorcycle shows are sometimes held in
-        the parking lot or area of ​​the Ynares Center and on May 25 - September
-        21, 2025 there was also a motorcycle racing event and on August 12, a
-        motorshow was also held.
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 174, 255);
-          "
-        >
-          6. Philippine Basketball Association (PBA)
-        </p>
+          <p>
+            The Rizal Provincial Government often organizes Christmas lighting
+            ceremonies, parades, concerts, and themed decorations around the
+            Ynares Center, transforming it into a festive destination for
+            families and visitors.
+          </p>
 
-        <p></p>
-        The Ynares Center is also sometimes used by the PBA or Philippine
-        Basketball Association.
-        <p
-          style="
-            font-family: Impact, Charcoal, sans-serif;
-            color: rgb(0, 174, 255);
-          "
-        >
-          7. Moving Up or Graduation
-        </p>
+          <p
+            style="
+              font-family: Impact, Charcoal, sans-serif;
+              color: rgb(0, 174, 255);
+            "
+          >
+            2. Cultural and Religious Activities
+          </p>
 
-        <p></p>
-        The Ynares center also hosts Moving up or Graduation for students who
-        graduate from Gr6-College.
+          <p>
+            Since Antipolo is known for its religious heritage, events like
+            Simbang Gabi (night masses), Marian processions, and other
+            traditional celebrations may be held in or around the center during
+            the lead-up to Christmas.
+          </p>
 
-        <!-- Gallery Section -->
-        <div class="gallery" id="gallery">
-          <h2>Gallery</h2>
-          <div class="gallery-grid">
-            <img src="pba.jpg" alt="Gallery Image 1" />
-            <img src="pba1.jpg" alt="Gallery Image 2" />
-            <img src="pba2.jpg" alt="Gallery Image 3" />
-            <img src="grad1.jpg" alt="Gallery Image 4" />
-            <img src="grad2.jpg" alt="Gallery Image 5" />
-            <img src="grad3.jpg" alt="Gallery Image 6" />
-            <img src="y1.jpg" alt="Gallery Image 7" />
-            <img src="y2.jpg" alt="Gallery Image 8" />
-            <img src="y3.jpg" alt="Gallery Image 9" />
-            <img src="y4.jpg" alt="Gallery Image 10" />
-            <img src="y5.jpg" alt="Gallery Image 11" />
-            <img src="y6.jpg" alt="Gallery Image 12" />
-            <img src="yn1.jpg" alt="Gallery Image 13" />
-            <img src="yn2.jpg" alt="Gallery Image 14" />
-            <img src="yn3.jpg" alt="Gallery Image 15" />
+          <p
+            style="
+              font-family: Impact, Charcoal, sans-serif;
+              color: rgb(0, 174, 255);
+            "
+          >
+            3. Local Fairs and Bazaars
+          </p>
 
-            <!-- Videos -->
-            <video controls>
-              <source src="d4.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <p>
+            Temporary bazaars, food stalls, trade fairs, and handicraft expos
+            often pop up around the Ynares Center during the holidays, offering
+            unique products and local delicacies perfect for gift-giving and
+            pasalubong (souvenirs).
+          </p>
 
-            <video controls>
-              <source src="d5.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <p
+            style="
+              font-family: Impact, Charcoal, sans-serif;
+              color: rgb(0, 174, 255);
+            "
+          >
+            4. Concerts and Public Performances
+          </p>
 
-            <video controls>
-              <source src="d6.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <p>
+            Big concerts, celebrity shows, and performances by local artists are
+            frequently held at the arena during the festive season, drawing
+            crowds from neighboring cities and provinces.
+          </p>
 
-            <video controls>
-              <source src="d1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <p
+            style="
+              font-family: Impact, Charcoal, sans-serif;
+              color: rgb(0, 174, 255);
+            "
+          >
+            5. Motorcycle Events
+          </p>
 
-            <video controls>
-              <source src="d2.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <p>
+            Motorcycle events such as races and shows are sometimes held in the
+            parking area of the Ynares Center. On May 25 - September 21, 2025,
+            there was a motorcycle racing event, and on August 12, a motorshow
+            was also held.
+          </p>
 
-            <video controls>
-              <source src="d3.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <p
+            style="
+              font-family: Impact, Charcoal, sans-serif;
+              color: rgb(0, 174, 255);
+            "
+          >
+            6. Philippine Basketball Association (PBA)
+          </p>
 
-            <video controls>
-              <source src="d7.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <p>
+            The Ynares Center is also sometimes used by the PBA or Philippine
+            Basketball Association for official games.
+          </p>
 
-            <video controls>
-              <source src="d8.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <p
+            style="
+              font-family: Impact, Charcoal, sans-serif;
+              color: rgb(0, 174, 255);
+            "
+          >
+            7. Moving Up or Graduation
+          </p>
 
-            <video controls>
-              <source src="d9.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          <p>
+            The Ynares Center also hosts moving-up or graduation ceremonies for
+            students graduating from Grade 6 to College.
+          </p>
         </div>
+      </div>
 
-        <style>
-          .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 4 items per row */
-            gap: 20px;
-            justify-items: center;
-          }
+      <!-- Gallery (HIWALAY SA SCROLL) -->
+      <div class="gallery" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <img src="pba.jpg" alt="Gallery Image 1" />
+          <img src="pba1.jpg" alt="Gallery Image 2" />
+          <img src="pba2.jpg" alt="Gallery Image 3" />
+          <img src="grad1.jpg" alt="Gallery Image 4" />
+          <img src="grad2.jpg" alt="Gallery Image 5" />
+          <img src="grad3.jpg" alt="Gallery Image 6" />
+          <img src="y1.jpg" alt="Gallery Image 7" />
+          <img src="y2.jpg" alt="Gallery Image 8" />
+          <img src="y3.jpg" alt="Gallery Image 9" />
+          <img src="y4.jpg" alt="Gallery Image 10" />
+          <img src="y5.jpg" alt="Gallery Image 11" />
+          <img src="y6.jpg" alt="Gallery Image 12" />
+          <img src="yn1.jpg" alt="Gallery Image 13" />
+          <img src="yn2.jpg" alt="Gallery Image 14" />
+          <img src="yn3.jpg" alt="Gallery Image 15" />
 
-          .gallery-grid img,
-          .gallery-grid video {
-            width: 100%;
-            max-width: 320px;
-            height: auto;
-            border-radius: 12px;
-            object-fit: cover;
-          }
-        </style>
+          <!-- Videos -->
+          <video controls><source src="d4.mp4" type="video/mp4" /></video>
+          <video controls><source src="d5.mp4" type="video/mp4" /></video>
+          <video controls><source src="d6.mp4" type="video/mp4" /></video>
+          <video controls><source src="d1.mp4" type="video/mp4" /></video>
+          <video controls><source src="d2.mp4" type="video/mp4" /></video>
+          <video controls><source src="d3.mp4" type="video/mp4" /></video>
+          <video controls><source src="d7.mp4" type="video/mp4" /></video>
+          <video controls><source src="d8.mp4" type="video/mp4" /></video>
+          <video controls><source src="d9.mp4" type="video/mp4" /></video>
+        </div>
       </div>
     </div>
   </body>
