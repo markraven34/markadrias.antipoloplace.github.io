@@ -13,54 +13,80 @@
       }
 
       body {
-        display: flex;
         height: 100vh;
         overflow: hidden;
       }
 
-      /* Sidebar */
+      /* Sidebar menu container */
       .sidebar {
-        width: 220px;
-        background: #111;
-        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100vh;
+        background-color: #111;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding-top: 20px;
-        flex-shrink: 0;
-        z-index: 2; /* para laging nasa ibabaw ng video */
+        z-index: 2;
       }
 
-      .sidebar h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 18px;
-        border-bottom: 1px solid gray;
-        padding-bottom: 10px;
-      }
-
-      .sidebar ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .sidebar ul li {
-        padding: 12px 20px;
-        border-bottom: 1px solid #333;
-      }
-
-      .sidebar ul li a {
-        text-decoration: none;
+      /* Main icon or arrow button */
+      .menu-item {
+        position: relative;
+        width: 100%;
         color: white;
-        display: block;
-        transition: 0.3s;
+        text-align: center;
+        padding: 15px 0;
+        cursor: pointer;
+        transition: background 0.3s;
       }
 
-      .sidebar ul li a:hover {
-        background: #444;
+      .menu-item:hover {
+        background-color: #333;
+      }
+
+      /* Small arrow icon */
+      .arrow {
+        font-size: 18px;
+        display: block;
+      }
+
+      /* Dropdown content (hidden by default) */
+      .dropdown {
+        display: none;
+        position: absolute;
+        left: 60px; /* appears beside the sidebar */
+        top: 0;
+        background-color: #333;
+        min-width: 160px;
+        border-radius: 0 5px 5px 0;
+        overflow: hidden;
+      }
+
+      .dropdown a {
+        display: block;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .dropdown a:hover {
+        background-color: #555;
+      }
+
+      /* Show dropdown on hover */
+      .menu-item:hover .dropdown {
+        display: block;
       }
 
       /* Main content */
       .main {
-        flex: 1;
         position: relative;
+        width: 100%;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -77,7 +103,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        z-index: -1; /* nasa likod */
+        z-index: -1;
       }
 
       .main h1 {
@@ -91,57 +117,40 @@
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
       }
 
-      .main p {
-        font-size: 18px;
-        font-style: italic;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-      }
-
-      /* Responsive */
       @media (max-width: 768px) {
-        body {
-          flex-direction: column;
-        }
-        .sidebar {
-          width: 100%;
-          text-align: center;
-        }
-        .main {
-          height: 70vh;
+        .main h1 {
+          font-size: 40px;
+          -webkit-text-stroke: 1.5px white;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Sidebar -->
+    <!-- Sidebar Hover Menu -->
     <div class="sidebar">
-      <h2>Sections</h2>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="xentromall.html">Xentro Mall</a></li>
-        <li><a href="ynares.html">Ynares Center</a></li>
-        <li><a href="church.html">Transfiguration Of Parish Church</a></li>
-        <li><a href="taktak.html">Hinulugang Tak-tak</a></li>
-        <li><a href="robinson.html">Robinson Antipolo</a></li>
-        <li><a href="Group.html">About Us</a></li>
-
-        <li><a href="history.html">History</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <div class="menu-item">
+        <span class="arrow">▶</span>
+        <div class="dropdown">
+          <a href="index.html">Home</a>
+          <a href="xentromall.html">Xentro Mall</a>
+          <a href="ynares.html">Ynares Center</a>
+          <a href="church.html">Transfiguration Church</a>
+          <a href="taktak.html">Hinulugang Taktak</a>
+          <a href="robinson.html">Robinsons Antipolo</a>
+          <a href="Group.html">About Us</a>
+          <a href="history.html">History</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
     </div>
 
     <!-- Main Content -->
     <div class="main">
-      <!-- Video background -->
       <video autoplay muted loop>
         <source src="bg.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-
-      <!-- Text content -->
-      <div>
-        <h1>TRAVEL TAILS IN ANTIPOLO</h1>
-      </div>
+      <h1>TRAVEL TAILS IN ANTIPOLO</h1>
     </div>
   </body>
 </html>
