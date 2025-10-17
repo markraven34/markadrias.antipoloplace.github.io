@@ -24,53 +24,128 @@
         font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
           "Helvetica Neue", Arial;
       }
+
       * {
         box-sizing: border-box;
       }
+
       body {
         margin: 0;
         background: var(--bg);
         color: #0f172a;
+        font-family: "Inter", sans-serif;
       }
+
+      /* ✅ Sidebar */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100vh;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        z-index: 1000;
+      }
+
+      .menu-item {
+        position: relative;
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .menu-item:hover {
+        background-color: #444;
+      }
+
+      .arrow {
+        font-size: 18px;
+        display: block;
+      }
+
+      .dropdown {
+        display: none;
+        position: absolute;
+        left: 60px;
+        top: 0;
+        background-color: #444;
+        min-width: 150px;
+        border-radius: 0 5px 5px 0;
+        overflow: hidden;
+      }
+
+      .dropdown a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .dropdown a:hover {
+        background-color: #666;
+      }
+
+      .menu-item:hover .dropdown {
+        display: block;
+      }
+
+      /* ✅ Main layout shifted for sidebar */
       .container {
         max-width: 1100px;
         margin: 48px auto;
         padding: 24px;
+        margin-left: 80px; /* offset for sidebar */
       }
+
       .grid {
         display: grid;
         grid-template-columns: 1fr 420px;
         gap: 28px;
       }
+
       @media (max-width: 900px) {
         .grid {
           grid-template-columns: 1fr;
         }
       }
+
       .card {
         background: var(--card);
         border-radius: var(--radius);
         box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
         padding: 28px;
       }
+
       h1 {
         margin: 0 0 8px;
         font-size: 24px;
       }
+
       p.lead {
         margin: 0 0 18px;
         color: var(--muted);
       }
+
       .info-list {
         display: flex;
         flex-direction: column;
         gap: 12px;
       }
+
       .info-item {
         display: flex;
         gap: 14px;
         align-items: flex-start;
       }
+
       .icon {
         width: 44px;
         height: 44px;
@@ -83,14 +158,17 @@
         font-size: 18px;
         flex-shrink: 0;
       }
+
       .info-content strong {
         display: block;
       }
+
       .socials {
         display: flex;
         gap: 10px;
         margin-top: 8px;
       }
+
       .socials a {
         display: inline-flex;
         align-items: center;
@@ -99,18 +177,21 @@
         height: 40px;
         border-radius: 8px;
         background: #111827;
-        color: rgb(255, 255, 255);
+        color: white;
         text-decoration: none;
       }
+
       form {
         display: flex;
         flex-direction: column;
         gap: 12px;
       }
+
       label {
         font-size: 13px;
         color: var(--muted);
       }
+
       input[type="text"],
       input[type="email"],
       textarea {
@@ -120,36 +201,43 @@
         border: 1px solid #030303;
         font-size: 14px;
       }
+
       textarea {
         min-height: 140px;
         resize: vertical;
       }
+
       .row {
         display: flex;
         gap: 12px;
       }
+
       .row .col {
         flex: 1;
       }
+
       .btn {
         background: var(--accent);
-        color: rgb(0, 0, 0);
+        color: black;
         padding: 12px 16px;
         border-radius: 10px;
         border: 0;
         font-weight: 600;
         cursor: pointer;
       }
+
       .muted {
         color: var(--muted);
         font-size: 13px;
       }
+
       .map {
         height: 220px;
         border-radius: 10px;
         overflow: hidden;
         background: linear-gradient(180deg, #dcbafc, #ab93ff);
       }
+
       footer {
         margin-top: 20px;
         text-align: center;
@@ -160,6 +248,17 @@
   </head>
 
   <body>
+    <!-- ✅ Sidebar -->
+    <div class="sidebar">
+      <div class="menu-item">
+        <span class="arrow">▶</span>
+        <div class="dropdown">
+          <a href="blog.html">Back</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ Main Content -->
     <main class="container">
       <div class="grid">
         <!-- Left: Contact form -->
@@ -170,7 +269,6 @@
             message — we usually reply within 24 hours.
           </p>
 
-          <!-- ✅ FIXED FORM -->
           <form action="https://formspree.io/f/xvgwrkgn" method="POST">
             <div class="row">
               <div class="col">
@@ -207,7 +305,7 @@
             <textarea
               id="message"
               name="message"
-              placeholder="Tell us about your project, request, or question..."
+              placeholder="Tell us about your project..."
               required
             ></textarea>
 
@@ -234,7 +332,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: rgb(0, 0, 0);
+                color: black;
                 font-size: 28px;
               "
             >
@@ -250,7 +348,7 @@
               <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
               <div class="info-content">
                 <strong>Address</strong>
-                <div class="muted">Brgy. San salvador Bras Rizal</div>
+                <div class="muted">Brgy. San Salvador, Baras, Rizal</div>
               </div>
             </div>
 
@@ -305,35 +403,17 @@
               <strong>Find us</strong>
               <div class="map" aria-hidden="true">
                 <div style="padding: 18px; color: var(--muted)">
-                  Map preview — embed an iframe from Google Maps here.
+                  Map preview — embed Google Maps iframe here.
                 </div>
               </div>
             </div>
           </div>
         </aside>
       </div>
-
-      <div style="text-align: center; margin: 30px 0">
-        <a
-          href="blog.html"
-          style="
-            display: inline-block;
-            padding: 12px 24px;
-            background: #0ea5e9;
-            color: #fff;
-            font-weight: bold;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background 0.3s;
-          "
-          >⬅ Back</a
-        >
-      </div>
     </main>
 
-    <!-- ✅ Script placed correctly -->
     <script>
-      // I-clear ang form kapag bumalik mula sa "Thanks" page
+      // Clear form when navigating back
       window.addEventListener("pageshow", function (event) {
         const navEntries = performance.getEntriesByType("navigation");
         const isBack =
