@@ -22,7 +22,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: rgb(66, 16, 124); /* main text color */
+        color: rgb(66, 16, 124);
         position: relative;
       }
 
@@ -31,7 +31,7 @@
         font-size: 100px;
         font-weight: bold;
         margin-bottom: 20px;
-        -webkit-text-stroke: 3px rgb(255, 255, 255); /* stroke only for h1 */
+        -webkit-text-stroke: 3px rgb(255, 255, 255);
       }
 
       /* Navbar */
@@ -89,39 +89,24 @@
         padding: 12px 30px;
         border: 4px solid rgb(0, 0, 0);
         text-decoration: none;
-        color: rgb(40, 8, 221);
+        color: white;
         font-weight: bold;
-        background: rgba(245, 243, 243, 0.3);
+        background-color: rgb(66, 16, 124); /* ✅ solid background color */
+        border-radius: 10px;
         transition: 0.3s;
-        -webkit-text-stroke: 0; /* ensure no stroke */
       }
 
       .hero a:hover {
-        background: rgb(66, 16, 124);
-        color: rgb(0, 0, 0);
+        background-color: rgb(255, 5, 101); /* hover color */
+        color: white;
+        border-color: rgb(255, 5, 101);
       }
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li>
-          <a href="#">About</a>
-          <ul>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Mission</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-
     <!-- Hero Section -->
     <div class="hero">
       <h1>Commercial Website</h1>
-      <p></p>
       <h1>Group 3</h1>
       <a href="blog.html">Continue to Blog</a>
     </div>
