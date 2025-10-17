@@ -3,35 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7 Images with Explanation</title>
+    <title>Antipolo History with Sidebar</title>
     <style>
-      /* Background section */
       body {
         margin: 0;
-        padding: 0;
         font-family: Arial, sans-serif;
+        background-color: #000000;
       }
 
-      .hero {
-        background-color: #ff0101;
+      /* Sidebar menu container */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60px;
         height: 100vh;
+        background-color: #333;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        text-align: center;
-        color: rgb(29, 194, 51);
+        padding-top: 20px;
+        z-index: 1000;
       }
 
-      /* Testimonials Section */
+      /* Main icon or arrow button */
+      .menu-item {
+        position: relative;
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .menu-item:hover {
+        background-color: #444;
+      }
+
+      /* Small arrow icon */
+      .arrow {
+        font-size: 18px;
+        display: block;
+      }
+
+      /* Dropdown content (hidden by default) */
+      .dropdown {
+        display: none;
+        position: absolute;
+        left: 60px;
+        top: 0;
+        background-color: #444;
+        min-width: 150px;
+        border-radius: 0 5px 5px 0;
+        overflow: hidden;
+      }
+
+      .dropdown a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .dropdown a:hover {
+        background-color: #666;
+      }
+
+      /* Show dropdown on hover */
+      .menu-item:hover .dropdown {
+        display: block;
+      }
+
       .testimonials {
-        background-color: #bebebe;
+        background-color: #c4c4c4;
         background-size: cover;
         padding: 40px 60px;
         margin: 40px auto;
         border-radius: 12px;
-        max-width: 900px; /* limit width para center */
-        text-align: justify; /* justify text */
+        max-width: 900px;
+        text-align: justify;
         color: #000000;
         font-family: "Times New Roman", serif;
         font-size: 24px;
@@ -44,10 +96,9 @@
         font-family: "Arial Black", sans-serif;
         margin-bottom: 20px;
         color: #30015c;
-        text-align: center; /* center heading */
+        text-align: center;
       }
 
-      /* Button Style */
       .btn-link,
       button {
         display: inline-block;
@@ -68,16 +119,21 @@
         background-color: #bebebe;
       }
 
-      /* Center the button */
       .testimonials button {
         display: block;
-        margin: 30px auto 0; /* center sa ilalim */
+        margin: 30px auto 0;
       }
     </style>
   </head>
   <body>
-    <div class="gallery">
-      <!-- your 7 image items here -->
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="menu-item">
+        <span class="arrow">▶</span>
+        <div class="dropdown">
+          <a href="blog.html">Back</a>
+        </div>
+      </div>
     </div>
 
     <!-- Testimonials Section -->
@@ -88,25 +144,25 @@
         of Luzon, Philippines.
       </p>
       <p>
-        2. Geography:It is about 6 meters above sea level, bordered by San Mateo
-        and La Paz (north), Calumpit (west), Quezon City and Pasig (south), and
-        Manila Bay (east).
+        2. Geography: It is about 6 meters above sea level, bordered by San
+        Mateo and La Paz (north), Calumpit (west), Quezon City and Pasig
+        (south), and Manila Bay (east).
       </p>
       <p>
-        3. Origin of Name:The city’s name comes from the Tipolo (breadfruit)
+        3. Origin of Name: The city’s name comes from the Tipolo (breadfruit)
         tree, which was once abundant in the area.
       </p>
       <p>
-        4. Founding:Antipolo was established in 1570 by Miguel de Legazpi, the
+        4. Founding: Antipolo was established in 1570 by Miguel de Legazpi, the
         first governor-general of the Philippines, as a religious retreat and
         exploration base.
       </p>
       <p>
         5. Spanish Fortress: The Spanish built a military fortress in Antipolo
-        to protect against Moro attacks
+        to protect against Moro attacks.
       </p>
       <p>
-        6. Christian Mission (1571):Fray Andres de Urdaneta arrived to spread
+        6. Christian Mission (1571): Fray Andres de Urdaneta arrived to spread
         Christianity, starting on November 6 and finishing on December 20, 1571,
         baptizing 221 natives and establishing six missions.
       </p>
@@ -120,20 +176,17 @@
         Almarique.
       </p>
       <p>
-        9. Christianization:By 1601, Antipolo’s Christian population grew to
+        9. Christianization: By 1601, Antipolo’s Christian population grew to
         3,000, including Dumagats, Tagals, Indians, and Aetas.
       </p>
       <p>
-        10.Province of Rizal (1901): On June 11, 1901, Antipolo joined the newly
-        created Province of Rizal.
+        10. Province of Rizal (1901): On June 11, 1901, Antipolo joined the
+        newly created Province of Rizal.
       </p>
       <p>
         11. Municipal Changes (1903–1919): 1903: Antipolo merged with Boso-Boso
-        and Teresa.
-      </p>
-      <p>
-        1913: The sitios of Mayamot and Bulao were added. 1919: Teresa separated
-        to become its own municipality.
+        and Teresa. 1913: The sitios of Mayamot and Bulao were added. 1919:
+        Teresa separated to become its own municipality.
       </p>
       <p>
         12. Railway (1908): The Manila Railroad Company opened a train line to
@@ -141,7 +194,7 @@
       </p>
       <p>
         13. Capital of Rizal: Antipolo became the capital of Rizal Province in
-        1901
+        1901.
       </p>
       <p>
         14. Cityhood (1998): Through Republic Act No. 8508, signed by President
@@ -149,13 +202,12 @@
         a plebiscite.
       </p>
       <p>
-        15. First City Mayor:Angelito Gatlabayan became Antipolo’s first city
-        mayoraf ter cityhood. 16. Religious Significance: Known as the
-        “Pilgrimage City”, it is famous for the Our Lady of Peace and Good
-        Voyage icon.
-
-        <!-- Button with hyperlink -->
-        <button onclick="window.location.href='blog.html'">← Back</button>
+        15. First City Mayor: Angelito Gatlabayan became Antipolo’s first city
+        mayor after cityhood.
+      </p>
+      <p>
+        16. Religious Significance: Known as the “Pilgrimage City”, it is famous
+        for the Our Lady of Peace and Good Voyage icon.
       </p>
     </section>
   </body>
